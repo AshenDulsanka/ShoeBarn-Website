@@ -1,7 +1,10 @@
 <?php
     include ("db.php"); //include db.php file to connect to DB
     $pagename="ShoeBarn Authorized Nike Dealer"; //create and populate variable called $pagename
-    echo "<link rel=stylesheet type=text/css href=mystylesheet.css>";
+
+    // imports css stylesheet
+    echo "<link rel=stylesheet type=text/css href=stylesheet.css>";
+    
     echo "<title>".$pagename."</title>";
     echo "<body>";
     include ("headfile.html");
@@ -13,7 +16,7 @@
     //run SQL query for connected DB or exit and display error message
     $exeSQL=mysqli_query($conn, $SQL) or die (mysqli_error($conn));
     echo "<table style='border: 0px'>";
-    
+
     //create an array of records (2 dimensional variable) called $arrayp.
     //populate it with the records retrieved by the SQL query previously executed.
     //Iterate through the array i.e while the end of the array has not been reached, run through it
@@ -32,7 +35,7 @@
                     echo "<td style='border: 0px'>";
                     echo "<p><h5>".$arrayp['prodName']."</h5>"; //display product name as contained in the array
                     echo "<p>".$arrayp['prodDescripShort']."</p>"; //display product short description in the array
-                    echo "<br><p><b>&pound".$arrayp['prodPrice']."</b>"; //display product price in the array
+                    echo "<br><p><b>Rs".$arrayp['prodPrice']."</b>"; //display product price in the array
                     echo "</td>";
             echo "</tr>";
 

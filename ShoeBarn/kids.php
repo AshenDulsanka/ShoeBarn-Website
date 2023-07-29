@@ -1,14 +1,14 @@
 <?php
     include ("db.php"); //include db.php file to connect to DB
     $pagename="Kid's Shoes"; //create and populate variable called $pagename
-    echo "<link rel=stylesheet type=text/css href=mystylesheet.css>";
+    echo "<link rel=stylesheet type=text/css href=stylesheet.css>";
     echo "<title>".$pagename."</title>";
     echo "<body>";
     include ("headfile.html");
     echo "<h4>".$pagename."</h4>";
 
     //create a $SQL variable and populate it with a SQL statement that retrieves product details
-    $SQL="select prodId, prodName, prodPicNameSmall,prodDescripShort,prodPrice from Product";
+    $SQL="select kidID, prodName, prodPicNameSmall,prodDescripShort,prodPrice from kids";
 
     //run SQL query for connected DB or exit and display error message
     $exeSQL=mysqli_query($conn, $SQL) or die (mysqli_error($conn));
@@ -24,18 +24,20 @@
             echo "<tr>";
                 echo "<td style='border: 0px'>";
                 //make the image into an anchor to prodbuy.php and pass the product id by URL (the id from the array)
-                echo "<a href=prodbuy.php?u_prod_id=".$arrayp['prodId'].">";
+                echo "<a href=prodbuyk.php?u_prod_id=".$arrayp['kidID'].">";
                 //display the small image whose name is contained in the array
-                echo "<img src=images/".$arrayp['prodPicNameSmall']." height=200 width=200>";
+                echo "<img src=images/Shoes/".$arrayp['prodPicNameSmall']." height=200 width=200>";
                 //close the anchor
                 echo "</a>";
                 
                 echo "</td>";
-                    echo "<td style='border: 0px'>";
-                    echo "<p><h5>".$arrayp['prodName']."</h5>"; //display product name as contained in the array
+                echo "<td style='border: 0px'>";
+                    echo "<a href=prodbuyk.php?u_prod_id=".$arrayp['kidID'].">";
+                    echo "<p style='font-size:25px'><b>".$arrayp['prodName']."</b></p><br>";//display product name as contained in the array
+                    echo "</a>"; 
                     echo "<p>".$arrayp['prodDescripShort']."</p>"; //display product short description in the array
-                    echo "<br><p><b>&pound".$arrayp['prodPrice']."</b>"; //display product price in the array
-                    echo "</td>";
+                    echo "<br><p><b>Rs".$arrayp['prodPrice']."</b>"; //display product price in the array
+                echo "</td>";
             echo "</tr>";
 
         }

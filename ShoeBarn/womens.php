@@ -1,14 +1,14 @@
 <?php
     include ("db.php"); //include db.php file to connect to DB
     $pagename="Women's Shoes"; //create and populate variable called $pagename
-    echo "<link rel=stylesheet type=text/css href=mystylesheet.css>";
+    echo "<link rel=stylesheet type=text/css href=stylesheet.css>";
     echo "<title>".$pagename."</title>";
     echo "<body>";
     include ("headfile.html");
     echo "<h4>".$pagename."</h4>";
 
     //create a $SQL variable and populate it with a SQL statement that retrieves product details
-    $SQL="select prodId, prodName, prodPicNameSmall,prodDescripShort,prodPrice from Product";
+    $SQL="select womanID, prodName, prodPicNameSmall,prodDescripShort,prodPrice from woman";
 
     //run SQL query for connected DB or exit and display error message
     $exeSQL=mysqli_query($conn, $SQL) or die (mysqli_error($conn));
@@ -22,9 +22,9 @@
             echo "<tr>";
                 echo "<td style='border: 0px'>";
                 //make the image into an anchor to prodbuy.php and pass the product id by URL (the id from the array)
-                echo "<a href=prodbuy.php?u_prod_id=".$arrayp['prodId'].">";
+                echo "<a href=prodbuyw.php?u_prod_id=".$arrayp['womanID'].">";
                 //display the small image whose name is contained in the array
-                echo "<img src=images/".$arrayp['prodPicNameSmall']." height=200 width=200>";
+                echo "<img src=images/Shoes/".$arrayp['prodPicNameSmall']." height=200 width=200>";
                 //close the anchor
                 echo "</a>";
                 
@@ -35,7 +35,6 @@
                     echo "<br><p><b>&pound".$arrayp['prodPrice']."</b>"; //display product price in the array
                     echo "</td>";
             echo "</tr>";
-
         }
     echo "</table>";
         include ("footfile.html");
