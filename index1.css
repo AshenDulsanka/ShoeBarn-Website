@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration:none;
+}
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 33px 9%;
+    background: transparent;
+}
+.logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+.navlist{
+    display: flex;
+}
+.navlist a{
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+.navlist a:hover{
+    border-bottom: 2px solid white;
+}
+#menu-icon{
+    color: white;
+    font-size: 30px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    background-image: url("images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items:center ;
+}
+section{
+    padding:0 19% ;
+}
+.hero-text p{
+    color: white;
+    font-size: 20px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+.hero-img{
+    width: 100px;
+    height: auto;
+    margin-left: 100px;
+    transform: rotate(-25deg);
+}
+.hero-text a{
+    display: inline-block;
+    color: white;
+    background: #94989c;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+}
+.hero-text a:hover{
+    background: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+.icons{
+    position: absolute;
+    top: 50%;
+    padding: 0 9%;
+    transform: translateY(-50%);
+}
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    color: white;
+    transition: all .50s ease;
+}
+.icons i:hover{
+    color: #bac2bc;
+    transform: translateY(-5px);
+}
+.scroll-right{
+    position: absolute;
+    bottom: 6%;
+    right: 9%;
+}
+.scroll-right i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    color: white;
+    background: #a7afa9;
+    border-radius: 30px;
+    transition: all .50s ease;
+}
+.scroll-right i:hover{
+    transform: translateY(-5px);
+}
